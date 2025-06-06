@@ -125,7 +125,7 @@ header {
     background-color: rgb(248, 4, 4);
 }
 
-.clear-button:hover, .search-button {
+.clear-button:hover, .search-button:hover {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
     font-size: 18px;
 }
