@@ -26,7 +26,7 @@ search_btn.addEventListener('click', searchdestination);
 
  
 function searchdestination() {
-    const searchInput = document.getElementById("search_btn").value.toLowerCase();
+    const searchInput = document.getElementById("search_input").value.toLowerCase();
     
     
  
@@ -39,19 +39,18 @@ function searchdestination() {
         
 
         if (country) {
-            const name = cities.name.join(', ');
-            const imageurl = cities.imageurl.join(', ');
-            const description = cities.description.join(', ');
+            country.cities.forEach(city => {
+            const name = city.name;
+            const imageUrl = city.imageUrl;
+            const description = city.description;
 
-        } 
-        else {
-            console.log('Condition not found.');
-        }
-        
+            console.log(name, imageUrl, description);
 
+        }); 
+        } else {
+            console.log('Country not found.');
+            }
         })
 
+    }       
 
-        
-
-    }
