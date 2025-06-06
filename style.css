@@ -121,15 +121,15 @@ header {
   background: none;
   border: none;
 }
-
-.search-button, .clear-button, #book_btn {
+/* Button Styles */
+.search-button, .clear-button, #book_btn, #visit_btn {
   border: none;
   border-radius:5px;
   font-size: 16px;
   color:aliceblue
 }
 
-.search-button, #book_btn {
+.search-button, #book_btn, #visit_btn {
     background-color: rgb(4, 248, 4);
 }
 
@@ -137,11 +137,36 @@ header {
     background-color: rgb(248, 4, 4);
 }
 
-.clear-button:hover, .search-button:hover, #book_btn:hover {
+.clear-button:hover, .search-button:hover, #book_btn:hover, #visit_btn:hover {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
     font-size: 18px;
 }
 
+/*search results*/
+.search_results {
+    position: fixed;
+    z-index: 1000; /* Sicherstellen, dass die Ergebnisse über anderen Inhalten liegen */
+    top: 60px;      /* Abstand zum Header */
+    right: 50px;    /* Abstand zum rechten Rand */
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.destination_img {  
+    max-width: 400px;
+    object-fit: cover;
+    border-radius: 10px; /* Abgerundete Ecken */
+}
+
+.destination_info {
+    background-color: rgba(0, 0, 0, 0.5); /* halbtransparent für Lesbarkeit */
+    color: aliceblue;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    margin-top: 10px;
+}
 
 /*Main Section*/
 
