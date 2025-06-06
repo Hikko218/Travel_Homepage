@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+    background-image: url("images/background_img.jpg");
+    background-size: cover;       /* passt das Bild an die Fläche an */
+    background-position: center;   /* zentriert das Bild */
+    background-repeat: no-repeat;  /* verhindert Wiederholung */
+    margin: 0;
+    padding: 0;
+
+}
+
+main {
+    margin-top: 50px; /*Inhalt nach Header*/
+}
+
+header {
+    display: flex;
+    background-color:  rgba(0, 0, 0, 0.5);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px; /* oder beliebige Höhe */
+    width: 100%;   
+}
+
+.icon_container {
+    display: flex;
+    align-items: center;         /* vertikal mittig */
+    justify-content: center; /* Icon links, Text daneben */
+    gap: 10px;
+
+}
+
+.icon {
+    width:auto;
+    max-height: 40px;
+    height:auto;
+    padding-left: 10px;
+       
+}
