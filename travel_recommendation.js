@@ -35,7 +35,8 @@ function searchdestination() {
         .then(response => response.json())
          .then(data => {
             const country = data.countries.find(item => item.name.toLowerCase() === searchInput);
-    
+            //const temple  = data.temples.find(item => item.temples.toLowerCase() === searchInput);
+            //const beach   = data.beaches.find(item => item.temples.toLowerCase() === searchInput);
         
 
         if (country) {
@@ -45,6 +46,54 @@ function searchdestination() {
             const description = city.description;
 
             console.log(name, imageUrl, description);
+             // Display the results in the UI
+            document.getElementById("search_results").innerHTML += `
+                <div id="image_container">
+                    <img src="${imageUrl}" alt="${name}">
+                </div>
+                 <div id="destination_info">
+                    <h1>${name}</h1>
+                    <p>${description}</p>
+                </div>
+            `;
+         });
+        } else if (temple) {
+            temple.forEach(temple => {
+            const name = temple.name;
+            const imageUrl = temple.imageUrl;
+            const description = temple.description;
+
+            console.log(name, imageUrl, description);
+
+             // Display the results in the UI
+            document.getElementById("search_results").innerHTML += `
+                <div id="image_container">
+                    <img src="${imageUrl}" alt="${name}">
+                </div>
+                 <div id="destination_info">
+                    <h1>${name}</h1>
+                    <p>${description}</p>
+                </div>
+            `;
+              });
+          } else if (beach) {
+            beach.forEach(beach => {
+            const name = beach.name;
+            const imageUrl = beach.imageUrl;
+            const description = beach.description;
+
+            console.log(name, imageUrl, description);
+            
+            // Display the results in the UI
+            document.getElementById("search_results").innerHTML += `
+                <div id="image_container">
+                    <img src="${imageUrl}" alt="${name}">
+                </div>
+                 <div id="destination_info">
+                    <h1>${name}</h1>
+                    <p>${description}</p>
+                </div>
+            `;
 
         }); 
         } else {
@@ -53,4 +102,4 @@ function searchdestination() {
         })
 
     }       
-
+  

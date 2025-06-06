@@ -153,13 +153,13 @@ header {
     width: 400px;
 }
 
-.destination_img {  
+#destination_img {  
     max-width: 400px;
     object-fit: cover;
     border-radius: 10px; /* Abgerundete Ecken */
 }
 
-.destination_info {
+#destination_info {
     background-color: rgba(0, 0, 0, 0.5); /* halbtransparent für Lesbarkeit */
     color: aliceblue;
     padding: 20px;
