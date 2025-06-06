@@ -108,7 +108,7 @@
         </div>
           
         <fieldset class="contact_fieldset">
-          <form class="contact_form">
+          <form class="contact_form" id="contact_form">
           <label for="name">Name:</label><br>
           <input type="text" id="name" name="name" required><br>
           <label for="email">Email:</label><br>
@@ -118,6 +118,11 @@
           <button type="submit" id="submit_btn">Submit</button>
           </form>
         </fieldset>
+
+         <div id="popup" class="popup">
+          <p>Thanks for your message!</p>
+          <button id="popup_btn"onclick="closePopup()">OK</button>
+          </div>
 
 
 
@@ -129,7 +134,6 @@
 
     
 
-    
       
     
   </main>

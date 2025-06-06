@@ -332,18 +332,45 @@ fieldset {
 
 /*Footer Section*/
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
-    height:25px;
+    height:35px;
     color:aliceblue;
+    margin-top: auto;
+    background-color: rgba(0, 0, 0, 0.4);
     }
 #copyright {
     font-size: 14px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0px;
     display: flex;
     align-items: center;      
     justify-content: center;
     font-weight: bold; 
+    
+}
+
+/* popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: aliceblue;
+  padding: 50px;
+  border-radius: 10px;
+  z-index: 1000;
+  text-align: center;
+  
+}
+#popup_btn {
+  background-color: rgb(4, 248, 4);
+  color: aliceblue;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
 }
