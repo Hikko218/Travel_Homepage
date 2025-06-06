@@ -17,9 +17,9 @@
     </div> 
     <!-- Navigation Bar -->
     <nav class="nav_bar">
-        <a href="#home" class="nav" >Home</a>
-        <a href="#about" class="nav" >About Us</a>
-        <a href="#contact" class="nav" >Contact Us</a>
+        <a href="#" class="nav" onclick="showSection('homeContent')">Home</a>
+        <a href="#" class="nav" onclick="showSection('aboutContent')">About Us</a>
+        <a href="#" class="nav" onclick="showSection('contactContent')">Contact Us</a>
     </nav>
     <!-- Search Container -->
     <div class="search_container">
@@ -29,10 +29,8 @@
       <button id="delete_btn" class="clear-button" type="clear">Clear</button>
     </div>
   </header>
-<!-- Main Content Section -->
-  <main>
-    <section>
-      <!-- Sidebar -->
+  <!-- Sidebar -->
+    <section id="sidebarContent">
         <aside class="sidebar">
           <hr class="sidebar-separator">
           <a href="https://x.com" target="_blank">
@@ -44,23 +42,96 @@
           <a href="https://facebook.com" target="_blank">
           <img src="images/facebook_icon.png" class="icon_sidebar" alt="plain_icon"/></a>
         </aside>
-      <!-- Main Content -->
-      <div class="main_content">
-          <form class="main_form">  
-          <h1 id="main_headline">Explore<br>Dream<br>Destination</h1>
-          <p>It encourages exploration of unfamiliar terriotories, embracing diverse cultures and landscapes,while pursuiting
-              the desired destination that captivates the imagination and inspires a sense of adventure.
-          </p><br>
-          <button id="book_btn" >Book Now</button> 
+    </section>
+    <main>
+    <!-- Home Content -->
+      <section id="homeContent">
+          <div class="home_content">
+                <form class="home_form">  
+                <h1 id="home_headline">Explore<br>Dream<br>Destination</h1>
+                <p>It encourages exploration of unfamiliar terriotories, embracing diverse cultures and landscapes,while pursuiting
+                    the desired destination that captivates the imagination and inspires a sense of adventure.
+                </p><br>
+                <button id="book_btn" >Book Now</button> 
+              </form>
+          </div>      
+      </section>
+
+     <!-- About Us Content--> 
+    <section id="aboutContent" style="display: none;">
+      <div class="about_div">
+       <form class="about_form">
+          <label class="about_label"for="about_form">About Us</label><br><br>
+          <p>Welcome to TravelBloom!
+            We are a passionate team dedicated to helping people explore the world through unforgettable travel experiences.
+            Our mission is to inspire adventure and connect cultures, one destination at a time.<br>
+            At TravelBloom, we value trust, customer satisfaction, and seamless service.<br>
+            We believe in making travel easy, putting your needs first, and growing together with our community.<br>
+            Feel free to explore our website to learn more about our offers, destinations, and travel tips.
+          </p>
         </form>
-      </div>      
-      
-      
+        </div>
+      <!-- Our Team Section -->
+      <div class="our_team_div">
+        <h3 class="our_team_title">Our <br>Team</h3>
+        <div class="our_team_cards">          
+              <div class="team_card"> 
+                <h3>Heiko Ries </h3>
+                <p>is responsible for..</p>
+                <button>CEO</button>
+              </div> 
+
+              <div class="team_card"> 
+                <h3>Jane Doe </h3>
+                <p>is responsible for..</p>
+                <button>Travel Specialist</button>
+              </div>
+
+              <div class="team_card" >
+                <h3>Mike Tyson </h3>
+                <p>is responsible for..</p>
+                <button>Marketing Manager</button>
+              </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <section>
-      
+    <!-- Contact Us Content-->
+
+    <section id="contactContent" style="display: none;">
+      <div class="contact_div">
+        <div class="contact_header">
+        <h1>Contact Us</h1>
+        <p>Get in touch</p>
+        </div>
+          
+        <fieldset class="contact_fieldset">
+          <form class="contact_form">
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br>
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="8"  required></textarea><br>
+          <button type="submit" id="submit_btn">Submit</button>
+          </form>
+        </fieldset>
+
+
+
+
+
+    </div>
     </section>
+
+
+    
+
+    
+      
+    
   </main>
 
   <footer>

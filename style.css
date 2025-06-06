@@ -145,7 +145,7 @@ header {
 
 /*Main Section*/
 
-.main_content {
+.home_content {
     display: flex;
     flex-direction: column; /* Sidebar und Content nebeneinander */
     margin-top: 80px; /* Abstand zum Header */
@@ -153,20 +153,152 @@ header {
     width: 400px;
 }
 
-.main_form {
+.home_form {
     color:aliceblue;
     font-size: 20px;
     z-index: 1;
 }
-#main_headline {
+#home_headline {
     color: aliceblue;
     font-size: 60px;
 }
 
+/* About-Us Section */
+
+.about_div {
+    display: flex;
+    flex-direction: column; /* Sidebar und Content nebeneinander */
+    margin-top: 40px; /* Abstand zum Header */
+    margin-left: 150px; /* Abstand zur Sidebar */
+    width: 1000px;
+}
+
+.about_form {
+    color: aliceblue;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.about_label {
+    color: aliceblue;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+/* About-Us Our Team Section */
+
+
+.our_team_div {
+    display: flex;
+    gap: 80px;
+    margin-left: 200px;
+    margin-top: 40px; /* Abstand zum Header */
+    color:aliceblue; 
+    align-items: center;  
+}
+
+.our_team_title {
+  font-size: 36px;
+  font-weight: bold;
+  white-space: nowrap;
+  margin: 0;
+  z-index: 1;
+}
+
+.our_team_cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.team_card {
+  background-color: rgba(0, 0, 0, 0.2); /* halbtransparent für Lesbarkeit */
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  z-index: 1;
+}
+
+.team_card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.team_card p {
+  font-size: 14px;
+  color: #dcdcdc;
+  margin-bottom: 10px;
+}
+
+.team_card button {
+  background-color: #3949ab;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+
+/* Contact Section */
+
+.contact_div {
+    display: flex;
+    gap: 100px;
+    margin-left: 200px;
+    margin-top: 200px; /* Abstand zum Header */
+    color:aliceblue; 
+    align-items: center; 
+}
+
+.contact_header {
+    z-index: 1;
+}
+.contact_header h1 {
+    font-size: 60px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.contact_header p{
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+
+fieldset {
+    background-color: rgba(0, 0, 0, 0.2); /* halbtransparent für Lesbarkeit */
+    border: none;
+    border-radius: 10px;
+    width: 600px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    z-index: 1;
+}
+
+#message, #name, #email {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: aliceblue;
+    resize: none;
+}
+
+#submit_btn {
+    background-color: rgb(4, 248, 4);
+    color: aliceblue;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 
 /* Sidebar */
-
-
 
 .sidebar {
     position: fixed;
