@@ -47,29 +47,35 @@ function searchdestination() {
 
             // Countries search
 
-            data.countries.forEach(country => {
-              country.cities.forEach(city => {
-                if (normalize(city.name).includes(searchInput)) {
-                matches.push(city);
-                }
-              });
-            });
+            if (["city", "cities", "country", "countries"].includes(searchInput)) {
+            data.countries.forEach(c => c.cities.forEach(city => matches.push(city)));
+            } else {
+            data.countries.forEach(c =>
+            c.cities.forEach(city => {
+            if (normalize(city.name).includes(searchInput)) matches.push(city);
+                })
+              );
+            }
 
             // Temples search
 
+            if (["temple", "temples"].includes(searchInput)) {
+            matches.push(...data.temples);
+            } else {
             data.temples.forEach(temple => {
-              if (normalize(temple.name).includes(searchInput)) {
-              matches.push(temple);
-              }
+            if (normalize(temple.name).includes(searchInput)) matches.push(temple);
             });
+            }
 
             // Beaches search
 
+            if (["beach", "beaches"].includes(searchInput)) {
+            matches.push(...data.beaches);
+            } else {
             data.beaches.forEach(beach => {
-            if (normalize(beach.name).includes(searchInput)) {
-            matches.push(beach);
-            }
+            if (normalize(beach.name).includes(searchInput)) matches.push(beach);
             });
+            }
 
             // Displaying results
 
@@ -99,5 +105,12 @@ function searchdestination() {
             }
         })
 
-    }       
+    }   
+// Clear button functionality
+document.getElementById("clear_btn").addEventListener("click", function() {
+  document.getElementById("search_input").value = "";
+  document.getElementById("search_results").innerHTML = "";
+  document.getElementById("search_results").style.display = "none";
+});
+    
   

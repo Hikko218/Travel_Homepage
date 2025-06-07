@@ -121,7 +121,7 @@ header {
     gap: 8px;
 }
 
-.search-input {
+#search_input {
   border: none;
   outline: none;
   padding: 8px 10px;
