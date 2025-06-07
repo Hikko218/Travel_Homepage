@@ -1,27 +1,41 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Travel Recommendation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
+<!-- Body -->
+
 <body>
+
+<!-- Overlay -->
+
   <div class="overlay"></div>
+
 <!-- Header Section -->
+
   <header>
+
     <!-- Icon Container -->
+
     <div class="icon_container">
         <img src="images/plain_icon.gif" class="icon" alt="plain_icon"/>
         <span class="icon_label">TravelBloom</span> 
     </div> 
+
     <!-- Navigation Bar -->
+
     <nav class="nav_bar">
         <a href="#" class="nav" onclick="showSection('homeContent')">Home</a>
         <a href="#" class="nav" onclick="showSection('aboutContent')">About Us</a>
         <a href="#" class="nav" onclick="showSection('contactContent')">Contact Us</a>
     </nav>
+
     <!-- Search Container -->
+
     <div class="search_container">
       <input id="search_input"type="text" placeholder="Enter a destination or keyword"/>
       <button class="search-icon-btn">🔍</button>
@@ -30,11 +44,13 @@
     </div>
   </header>
   <main>
-  <div class="main-content-wrapper">
-    <!-- Search results container-->
 
+    <!-- Main-content-wrapper-->
+
+  <div class="main-content-wrapper">
   
     <!-- Home Content -->
+
       <section id="homeContent">
           <div class="home_content">
                 <form class="home_form">  
@@ -48,6 +64,7 @@
       </section>
 
      <!-- About Us Content--> 
+
     <section id="aboutContent" style="display: none;">
       <div class="about_div">
        <form class="about_form">
@@ -61,7 +78,9 @@
           </p>
         </form>
         </div>
+
       <!-- Our Team Section -->
+
       <div class="our_team_div">
         <h3 class="our_team_title">Our <br>Team</h3>
         <div class="our_team_cards">          
@@ -110,16 +129,18 @@
         </fieldset>
       </div>
     </section>
-  <!-- Search dummy-->
 
-    <section id="search_results" style="display: none;">
-                              
-           
+  <!-- Search results dummy-->
+
+    <section id="search_results" style="display: none;">                                
     </section>
+
+  <!-- end of main-content wrapper-->
+
 </div>
 
-
       <!-- Sidebar -->
+
     <section id="sidebarContent">
         <aside class="sidebar">
           <hr class="sidebar-separator">
@@ -135,18 +156,23 @@
     </section>
 
       <!-- Popup Message -->
-         <div id="popup" class="popup">
-          <p>Thanks for your message!</p>
-          <button id="popup_btn"onclick="closePopup()">OK</button>
-          </div>
+
+        <div id="popup" class="popup">
+        <p>Thanks for your message!</p>
+        <button id="popup_btn"onclick="closePopup()">OK</button>
+        </div>
     
-  
   </main>
+
+  <!-- Footer Section -->
 
   <footer>
     <p id="copyright">&copy; 2025 Heiko Ries</p>
   </footer>
 
+  <!-- JavaScript Files -->
+
   <script src="travel_recommendation.js"></script>
+
 </body>
 </html>

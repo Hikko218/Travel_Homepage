@@ -1,73 +1,74 @@
 /* Body & Layout */
-html, body {
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    background-image: url("images/background_img_2.jpg");
-    background-size: cover;       /* passt das Bild an die Fläche an */
-    background-position: center;   /* zentriert das Bild */
-    background-repeat: no-repeat;  /* verhindert Wiederholung */
 
+html, body {
+    min-height: 100%;                           /* Ensure full height */
+    margin: 0;                                  /* Remove default margin */
+    padding: 0;                                 /* Remove default padding */
+    background-image: url("images/background_img_4.jpg");
+    background-size: cover;       
+    background-position: center;   
+    background-repeat: no-repeat;  
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  display: flex;                                /* Flexbox for layout */
+  flex-direction: column;                       /* Column layout */
+  position: relative;                           /* Relative positioning for overlay */
 }
 
-
-
 main {
-    margin-top: 50px; /*Inhalt nach Header*/
-    flex: 1;
-    min-height: 2160px;
+    margin-top: 50px;                           /*Content after Header*/
+    flex: 1;                                    /* Allow main to grow and fill available space */
+    min-height: 1000px;                         /* Ensure main has a minimum height */
     
 }
 
-/* Hauptbereich als Flex-Container */
+/* Main section Flex-Container */
+
 .main-content-wrapper {
     display: flex;
-    justify-content: space-between; /* wichtig! trennt homeContent und search_results */
-    align-items: flex-start;
-    padding-left: 100px; /* für Sidebar-Abstand */
+    justify-content: space-between;             /* important! seperates homeContent and search_results */
+    align-items: flex-start;                    /* Align items at the top */
+    padding-left: 200px;                        /* for sidebar distance */
     width: 100%;
-    box-sizing: border-box;
-       
+    box-sizing: border-box;                     /* Include padding in width calculation */     
 }
 
+/* Overlay for the background image */
+
 .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: fixed;                              /* Fixed position to cover the entire viewport */
+  top: 0;                                       /* Start from the top */   
+  left: 0;                                      /* Start from the left */
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3); 
-  z-index: 0;
+  z-index: 0;                                   /* Ensure it is behind other content */
 }
 
 /*Header Section*/
 
 header {
     display: flex;
-    justify-content: space-between;             /* Drei Bereiche verteilen */
+    justify-content: space-between;             /* seperates in three areas */
     align-items: center;
     background-color:  rgba(0, 0, 0, 0.5);
     position: fixed; 
     top: 0;
     left: 0;
     right: 0;
-    height: 50px;                               /* oder beliebige Höhe */
+    height: 50px;                               /* Header height */
     width: 100%;
-    z-index: 1000;                          /* Sicherstellen, dass der Header über anderen Inhalten liegt */   
+    z-index: 1000;                              /* ensure visibility */   
 }
 
-/*Logo und Icon*/
+/*Logo and Icon*/
+
 .icon_container {
     display: flex;
-    align-items: center;         /* vertikal mittig */
-    justify-content: center;     /* Icon links, Text daneben */
-    gap: 10px;
+    align-items: center;                        /* vertikcal center */
+    justify-content: center;                    /* Icon left, text next to it */
+    gap: 10px;                                  /* distance between icon and text */
     font-weight: bold;
     font-size: 18px;
     color:aliceblue;
@@ -85,11 +86,11 @@ header {
 
 .nav_bar {
     display: flex;
-    align-items: center;        /* vertikal mittig */
-    justify-content: center;    /* zentriert die Links */
-    gap: 20px;                  /* Abstand zwischen Links */
+    align-items: center;        
+    justify-content: center;                    /* centers the links */
+    gap: 20px;                                  /* distance between links */
     list-style: none;
-    margin: 0;       /* Entfernt Standard-Margin */
+    margin: 0;                                  /* Entfernt Standard-Margin */
     padding: 0;
 }
 
@@ -101,18 +102,16 @@ header {
 }
 
 .nav:hover {
-    color: rgb(4, 248, 4); /* Farbe beim Hover */
-    transition: color 0.3s ease; /* sanfter Übergang */
-    cursor:default; /* Zeiger bleibt Standard */
-    
-
+    color: rgb(4, 248, 4); 
+    transition: color 0.3s ease; 
+    cursor:default; 
 }
 
 /*Searchbar*/
 
 .search_container {
     display: flex;
-    align-items: center; /* vertikal mittig */
+    align-items: center; 
     background-color: aliceblue;
     border-radius: 30px;
     padding: 1px 10px;
@@ -122,25 +121,27 @@ header {
 }
 
 #search_input {
-  border: none;
-  outline: none;
-  padding: 8px 10px;
-  border-radius: 20px;
-  font-size: 14px;
-  flex: 1;
-  min-width: 250px;
+    border: none;                                   /* Remove default border */
+    outline: none;                                  /* Remove default outline */
+    padding: 8px 10px;                              /* Padding for input field */
+    border-radius: 20px;
+    font-size: 14px;
+    flex: 1;                                        /* Allow input to grow */
+    min-width: 250px;
 }
 
 .search-icon-btn {
-  background: none;
-  border: none;
+    background: none;
+    border: none;
 }
+
 /* Button Styles */
+
 .search-button, .clear-button, #book_btn, .visit_btn {
-  border: none;
-  border-radius:5px;
-  font-size: 16px;
-  color:aliceblue
+    border: none;
+    border-radius:5px;
+    font-size: 16px;
+    color:aliceblue
 }
 
 .search-button, #book_btn, .visit_btn {
@@ -156,7 +157,18 @@ header {
     font-size: 18px;
 }
 
+#submit_btn {
+    background-color: rgb(4, 248, 4);
+    color: aliceblue;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 /*search results*/
+
 .search_results {
     position: relative; 
     width: 400px;
@@ -170,10 +182,7 @@ header {
     margin-top:10px;         
 }
 
-   
-
-#search_results {
-   
+#search_results { 
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
@@ -182,18 +191,17 @@ header {
   margin-right:10px; 
 }
 
-
 .destination_img {  
     max-width: 400px;
     object-fit: cover;
-    border-radius: 10px; /* Abgerundete Ecken */
+    border-radius: 10px; 
 }
 
-/*Main Section*/
+/*Home Section*/
 
 .home_content {
     position: relative;
-    flex: 1 1 0;  
+    flex: 1 1 0;                                        /* Allow it to grow and shrink */
     max-width: 600px;
     z-index: 1;
     margin-top: 0;
@@ -213,9 +221,9 @@ header {
 
 .about_div {
     display: flex;
-    flex-direction: column; /* Sidebar und Content nebeneinander */
-    margin-top: 50px; /* Abstand zum Header */
-    margin-left: 150px; /* Abstand zur Sidebar */
+    flex-direction: column;                         
+    margin-top: 50px;                                   /* distance for the Header */
+    margin-left: 150px;                                 /* space for the Sidebar */
     width: 1000px;
 }
 
@@ -233,60 +241,58 @@ header {
 
 /* About-Us Our Team Section */
 
-
 .our_team_div {
     display: flex;
     gap: 80px;
     margin-left: 200px;
-    margin-top: 40px; /* Abstand zum Header */
+    margin-top: 40px; 
     color:aliceblue; 
     align-items: center;  
 }
 
 .our_team_title {
-  font-size: 36px;
-  font-weight: bold;
-  white-space: nowrap;
-  margin: 0;
-  z-index: 1;
+    font-size: 36px;
+    font-weight: bold;
+    white-space: nowrap;
+    margin: 0;
+    z-index: 1;
 }
 
 .our_team_cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .team_card {
-  background-color: rgba(0, 0, 0, 0.2); /* halbtransparent für Lesbarkeit */
-  padding: 20px;
-  border-radius: 10px;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(255,255,255,0.2);
-  z-index: 1;
+    background-color: rgba(0, 0, 0, 0.2); 
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    z-index: 1;
 }
 
 .team_card h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #ffffff;
 }
 
 .team_card p {
-  font-size: 14px;
-  color: #dcdcdc;
-  margin-bottom: 10px;
+    font-size: 14px;
+    color: #dcdcdc;
+    margin-bottom: 10px;
 }
 
 .team_card button {
-  background-color: #3949ab;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
+    background-color: #3949ab;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
 }
-
 
 /* Contact Section */
 
@@ -313,9 +319,8 @@ header {
     margin: 20px 0;
 }
 
-
 fieldset {
-    background-color: rgba(0, 0, 0, 0.2); /* halbtransparent für Lesbarkeit */
+    background-color: rgba(0, 0, 0, 0.2); 
     border: none;
     border-radius: 10px;
     width: 600px;
@@ -333,31 +338,19 @@ fieldset {
     resize: none;
 }
 
-#submit_btn {
-    background-color: rgb(4, 248, 4);
-    color: aliceblue;
-    border: none;
-    padding: 5px 30px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-
 /* Sidebar */
 
 .sidebar {
     position: fixed;
-    top: 50px;                                              /* Höhe des Headers */
-    left: -20px;                                             /* Abstand von der linken Seite */
-    width: 100px;                                           /* Breite der Sidebar */
-    height: calc(100% - 50px);                              /* Höhe der Sidebar */
+    top: 50px;                                              
+    left: -20px;                                             
+    width: 100px;                                           
+    height: calc(100% - 50px);                                                                               
     display: flex;
     flex-direction: column;
-    align-items: center; 
-   
-    
+    align-items: center;    
 }
+
 .sidebar-separator {
     width: 3px;
     height: 200px; 
@@ -365,8 +358,7 @@ fieldset {
     border: none;
     border-radius: 10%;
     margin-top: 40px;
-    margin-bottom: 60px;
-    
+    margin-bottom: 60px;  
 }
 
 .icon_sidebar {
@@ -375,8 +367,8 @@ fieldset {
     border-radius: 50%;   
 }
 
-
 /*Footer Section*/
+
 footer {
     position: relative;
     bottom: 0;
@@ -386,37 +378,37 @@ footer {
     margin-top: auto;
     background-color: rgba(0, 0, 0, 0.4);
     }
+
 #copyright {
     font-size: 14px;
     padding: 0px;
     display: flex;
     align-items: center;      
     justify-content: center;
-    font-weight: bold; 
-    
+    font-weight: bold;    
 }
 
 /* popup */
-.popup {
-  display: none;
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  color: aliceblue;
-  padding: 50px;
-  border-radius: 10px;
-  z-index: 1000;
-  text-align: center;
-  
-}
-#popup_btn {
-  background-color: rgb(4, 248, 4);
-  color: aliceblue;
-  border: none;
-  padding: 5px 20px;
-  border-radius: 5px;
-  cursor: pointer;
 
+.popup {
+    display: none;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: aliceblue;
+    padding: 50px;
+    border-radius: 10px;
+    z-index: 1000;
+    text-align: center;
+}
+
+#popup_btn {
+    background-color: rgb(4, 248, 4);
+    color: aliceblue;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }

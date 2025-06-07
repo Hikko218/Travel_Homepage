@@ -1,5 +1,5 @@
 
-// Nav-bar and section management for a travel recommendation website
+// Nav-bar and section management 
 
 function showSection(sectionId) {
   const sections = document.querySelectorAll("#homeContent, #aboutContent, #contactContent, #search_results");
@@ -29,9 +29,9 @@ return str.trim().toLowerCase().replace(/\s+/g, "");
 
 // Fetching travel data from an API
 
-const travel_recommendation_api = "travel_recommendation_api.json"
+const travel_recommendation_api = "travel_recommendation_api.json";             // API endpoint        
 
-search_btn.addEventListener('click', searchdestination);
+search_btn.addEventListener('click', searchdestination);                                              
  
 function searchdestination() {
        
@@ -40,10 +40,10 @@ function searchdestination() {
          .then(data => {
             const searchInput = normalize(document.getElementById("search_input").value);
             const matches = [];
-            document.getElementById("search_input").value = ""; // Clear previous search input
+            document.getElementById("search_input").value = "";                   // Clear previous search input
 
             const resultsContainer = document.getElementById("search_results");
-            resultsContainer.innerHTML = ""; // clear previous results
+            resultsContainer.innerHTML = "";                                      // clear previous results
 
             // Countries search
 
@@ -105,12 +105,14 @@ function searchdestination() {
             }
         })
 
-    }   
+    } 
+
 // Clear button functionality
-document.getElementById("clear_btn").addEventListener("click", function() {
+
+  document.getElementById("clear_btn").addEventListener("click", function() {
   document.getElementById("search_input").value = "";
   document.getElementById("search_results").innerHTML = "";
   document.getElementById("search_results").style.display = "none";
-});
+  });
     
   
