@@ -3,7 +3,7 @@ html, body {
     min-height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url("images/background_img.jpg");
+    background-image: url("images/background_img_2.jpg");
     background-size: cover;       /* passt das Bild an die Fläche an */
     background-position: center;   /* zentriert das Bild */
     background-repeat: no-repeat;  /* verhindert Wiederholung */
