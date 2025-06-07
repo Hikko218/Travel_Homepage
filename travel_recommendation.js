@@ -1,13 +1,16 @@
+
 // Nav-bar and section management for a travel recommendation website
 
 function showSection(sectionId) {
-  const sections = document.querySelectorAll("main section");
+  const sections = document.querySelectorAll("#homeContent, #aboutContent, #contactContent, #search_results");
   sections.forEach(section => section.style.display = "none");
   
   const active = document.getElementById(sectionId);
   if (active) active.style.display = "block";
 }
+
 // contact form popup
+
 document.getElementById("contact_form").addEventListener("submit", function (e) {
   e.preventDefault(); // verhindert echtes Absenden
   document.getElementById("popup").style.display = "block";
@@ -18,86 +21,81 @@ function closePopup() {
   document.getElementById("contact_form").reset();
 }
 
+//input normalization function
+
+function normalize(str) {
+return str.trim().toLowerCase().replace(/\s+/g, "");
+}
+
 // Fetching travel data from an API
 
 const travel_recommendation_api = "travel_recommendation_api.json"
 
 search_btn.addEventListener('click', searchdestination);
-
  
 function searchdestination() {
-    const searchInput = document.getElementById("search_input").value.toLowerCase();
-    
-    
- 
-
+       
         fetch(travel_recommendation_api)
         .then(response => response.json())
          .then(data => {
-            const country = data.countries.find(item => item.name.toLowerCase() === searchInput);
-            //const temple  = data.temples.find(item => item.temples.toLowerCase() === searchInput);
-            //const beach   = data.beaches.find(item => item.temples.toLowerCase() === searchInput);
-        
+            const searchInput = normalize(document.getElementById("search_input").value);
+            const matches = [];
+            document.getElementById("search_input").value = ""; // Clear previous search input
 
-        if (country) {
-            country.cities.forEach(city => {
-            const name = city.name;
-            const imageUrl = city.imageUrl;
-            const description = city.description;
+            const resultsContainer = document.getElementById("search_results");
+            resultsContainer.innerHTML = ""; // clear previous results
 
-            console.log(name, imageUrl, description);
-             // Display the results in the UI
-            document.getElementById("search_results").innerHTML += `
-                <div id="image_container">
-                    <img src="${imageUrl}" alt="${name}">
-                </div>
-                 <div id="destination_info">
-                    <h1>${name}</h1>
-                    <p>${description}</p>
-                </div>
-            `;
-         });
-        } else if (temple) {
-            temple.forEach(temple => {
-            const name = temple.name;
-            const imageUrl = temple.imageUrl;
-            const description = temple.description;
+            // Countries search
 
-            console.log(name, imageUrl, description);
-
-             // Display the results in the UI
-            document.getElementById("search_results").innerHTML += `
-                <div id="image_container">
-                    <img src="${imageUrl}" alt="${name}">
-                </div>
-                 <div id="destination_info">
-                    <h1>${name}</h1>
-                    <p>${description}</p>
-                </div>
-            `;
+            data.countries.forEach(country => {
+              country.cities.forEach(city => {
+                if (normalize(city.name).includes(searchInput)) {
+                matches.push(city);
+                }
               });
-          } else if (beach) {
-            beach.forEach(beach => {
-            const name = beach.name;
-            const imageUrl = beach.imageUrl;
-            const description = beach.description;
+            });
+
+            // Temples search
+
+            data.temples.forEach(temple => {
+              if (normalize(temple.name).includes(searchInput)) {
+              matches.push(temple);
+              }
+            });
+
+            // Beaches search
+
+            data.beaches.forEach(beach => {
+            if (normalize(beach.name).includes(searchInput)) {
+            matches.push(beach);
+            }
+            });
+
+            // Displaying results
+
+            if (matches.length > 0) {
+            resultsContainer.style.display = "block";
+
+            matches.forEach(beach => {
+            const { name, imageUrl, description } = beach;
 
             console.log(name, imageUrl, description);
             
-            // Display the results in the UI
-            document.getElementById("search_results").innerHTML += `
-                <div id="image_container">
-                    <img src="${imageUrl}" alt="${name}">
-                </div>
-                 <div id="destination_info">
-                    <h1>${name}</h1>
+            resultsContainer.innerHTML += `
+                <div class="search_results">
+                    <img src="${imageUrl}" class="destination_img" alt="${name}">
+                    <h1 class="search_headline">${name}</h1>
                     <p>${description}</p>
+                    <button class="visit_btn" >Visit</button>
                 </div>
-            `;
+                `;
+            });   
+            }
 
-        }); 
-        } else {
-            console.log('Country not found.');
+        // Error handling for no matches 
+
+        else {
+            console.log('No matches found.');
             }
         })
 

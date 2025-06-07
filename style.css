@@ -1,6 +1,6 @@
 /* Body & Layout */
 html, body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
     background-image: url("images/background_img.jpg");
@@ -21,7 +21,21 @@ body {
 main {
     margin-top: 50px; /*Inhalt nach Header*/
     flex: 1;
+    min-height: 1000px;
+    
 }
+
+/* Hauptbereich als Flex-Container */
+.main-content-wrapper {
+    display: flex;
+    justify-content: space-between; /* wichtig! trennt homeContent und search_results */
+    align-items: flex-start;
+    padding-left: 100px; /* für Sidebar-Abstand */
+    width: 100%;
+    box-sizing: border-box;
+       
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -122,14 +136,14 @@ header {
   border: none;
 }
 /* Button Styles */
-.search-button, .clear-button, #book_btn, #visit_btn {
+.search-button, .clear-button, #book_btn, .visit_btn {
   border: none;
   border-radius:5px;
   font-size: 16px;
   color:aliceblue
 }
 
-.search-button, #book_btn, #visit_btn {
+.search-button, #book_btn, .visit_btn {
     background-color: rgb(4, 248, 4);
 }
 
@@ -137,45 +151,52 @@ header {
     background-color: rgb(248, 4, 4);
 }
 
-.clear-button:hover, .search-button:hover, #book_btn:hover, #visit_btn:hover {
+.clear-button:hover, .search-button:hover, #book_btn:hover, .visit_btn:hover {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
     font-size: 18px;
 }
 
 /*search results*/
 .search_results {
-    position: fixed;
-    z-index: 1000; /* Sicherstellen, dass die Ergebnisse über anderen Inhalten liegen */
-    top: 60px;      /* Abstand zum Header */
-    right: 50px;    /* Abstand zum rechten Rand */
-    display: flex;
-    flex-direction: column;
+    position: relative; 
     width: 400px;
+    margin-left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: aliceblue;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    text-align: center;
+    z-index: 100;
+    margin-top:10px;         
 }
 
-#destination_img {  
+   
+
+#search_results {
+   
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  margin-top: 10px;
+  margin-left: auto; 
+  margin-right:10px; 
+}
+
+
+.destination_img {  
     max-width: 400px;
     object-fit: cover;
     border-radius: 10px; /* Abgerundete Ecken */
 }
 
-#destination_info {
-    background-color: rgba(0, 0, 0, 0.5); /* halbtransparent für Lesbarkeit */
-    color: aliceblue;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255,255,255,0.2);
-    margin-top: 10px;
-}
-
 /*Main Section*/
 
 .home_content {
-    display: flex;
-    flex-direction: column; /* Sidebar und Content nebeneinander */
-    margin-top: 80px; /* Abstand zum Header */
-    margin-left: 150px; /* Abstand zur Sidebar */
-    width: 400px;
+    position: relative;
+    flex: 1 1 0;  
+    max-width: 600px;
+    z-index: 1;
+    margin-top: 0;
 }
 
 .home_form {
@@ -193,7 +214,7 @@ header {
 .about_div {
     display: flex;
     flex-direction: column; /* Sidebar und Content nebeneinander */
-    margin-top: 40px; /* Abstand zum Header */
+    margin-top: 50px; /* Abstand zum Header */
     margin-left: 150px; /* Abstand zur Sidebar */
     width: 1000px;
 }
