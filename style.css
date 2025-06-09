@@ -412,3 +412,198 @@ footer {
     border-radius: 5px;
     cursor: pointer;
 }
+
+/*  Responsive Styles */
+
+/* Stack header nav items and center them on medium screens */
+
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+   .main-content-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column;
+    padding:40px;
+  }
+
+  main {
+    min-height: 1400px;
+  }
+
+  .home_content {
+    padding-left: 30px;
+  }
+
+  .about_div {
+    margin: 0;
+    width: 100%;
+    padding: 0 30px;
+    padding-top: 20px;
+  }
+
+    .our_team_div {
+    margin-left: 0;
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .our_team_cards {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .team_card {
+    width: 100%;
+    max-width: 300px;
+  }
+ 
+}
+
+ @media (max-width: 768px) {
+
+  /* MAIN-LAYOUT ANPASSUNGEN */
+
+  .main-content-wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  main {
+    padding-top: 150px;
+  }
+
+  /* ABOUT SECTION */
+
+  .aboutContentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about_label {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .our_team_cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+  .our_team_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 0;
+    padding: 0 20px;
+  }
+
+  .our_team_title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  /* CONTACT SECTION */
+
+  .contact_div {
+    flex-direction: column;
+    gap: 40px;
+    margin: 80px 20px 20px 70px;
+    align-items: center;
+  }
+
+  .contact_header h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .contact_header p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  fieldset {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+  }
+
+  /* FORM ELEMENTE */
+
+  #name, #email, #message {
+    font-size: 16px;
+  }
+
+  /* FOOTER */
+
+  footer {
+    text-align: center;
+  }
+
+  /* SIDEBAR AUSBLENDEN */
+
+  .sidebar {
+    display: none;
+  }
+
+  /* HOMEPAGE BUTTON & HEADLINE */
+
+  #home_headline {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  #book_btn {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  /* SEARCH CONTAINER */
+
+  .search_container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #search_input {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .search-button, .clear-button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .search_results {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .destination_img {
+    width: 100%;
+    height: auto;
+  }
+}
