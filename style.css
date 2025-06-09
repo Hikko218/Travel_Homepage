@@ -11,9 +11,9 @@ html, body {
 }
 
 body {
-  display: flex;                                /* Flexbox for layout */
-  flex-direction: column;                       /* Column layout */
-  position: relative;                           /* Relative positioning for overlay */
+    display: flex;                                /* Flexbox for layout */
+    flex-direction: column;                       /* Column layout */
+    position: relative;                           /* Relative positioning for overlay */
 }
 
 main {
@@ -37,13 +37,13 @@ main {
 /* Overlay for the background image */
 
 .overlay {
-  position: fixed;                              /* Fixed position to cover the entire viewport */
-  top: 0;                                       /* Start from the top */   
-  left: 0;                                      /* Start from the left */
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3); 
-  z-index: 0;                                   /* Ensure it is behind other content */
+    position: fixed;                              /* Fixed position to cover the entire viewport */
+    top: 0;                                       /* Start from the top */   
+    left: 0;                                      /* Start from the left */
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: 0;                                   /* Ensure it is behind other content */
 }
 
 /*Header Section*/
@@ -183,12 +183,12 @@ header {
 }
 
 #search_results { 
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 auto;
-  margin-top: 10px;
-  margin-left: auto; 
-  margin-right:10px; 
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    margin-top: 10px;
+    margin-left: auto; 
+    margin-right:10px; 
 }
 
 .destination_img {  
@@ -415,8 +415,6 @@ footer {
 
 /*  Responsive Styles */
 
-/* Stack header nav items and center them on medium screens */
-
 @media (max-width: 1024px) {
   header {
     flex-direction: column;
@@ -436,10 +434,6 @@ footer {
     padding:40px;
   }
 
-  main {
-    min-height: 1400px;
-  }
-
   .home_content {
     padding-left: 30px;
   }
@@ -451,7 +445,7 @@ footer {
     padding-top: 20px;
   }
 
-    .our_team_div {
+   .our_team_div {
     margin-left: 0;
     padding: 0 20px;
     flex-direction: column;
@@ -469,12 +463,47 @@ footer {
     width: 100%;
     max-width: 300px;
   }
+
+   #contactContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+
+
+  .contact_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 650px;
+    margin: 60px auto 40px auto; 
+    gap: 40px; 
+    padding: 20px;
+    box-sizing: border-box; 
+    }
  
 }
 
- @media (max-width: 768px) {
+@media (max-width: 900px) {
+  .contact_div {
+    margin: 60px auto;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    gap: 30px;
+  }
+}
 
-  /* MAIN-LAYOUT ANPASSUNGEN */
+
+ @media (max-width: 768px) {
 
   .main-content-wrapper {
     flex-direction: column;
@@ -605,5 +634,14 @@ footer {
   .destination_img {
     width: 100%;
     height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact_div {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 90%;
+    gap: 20px;
   }
 }
